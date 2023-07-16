@@ -42,6 +42,41 @@ const router = createRouter({
       path: '/CompositionAPI/lession7',
       name: 'lession7',
       component: () => import('../views/CompositionAPI/LessionSeven.vue')
+    },
+    {
+      path: '/CompositionAPI/lession8',
+      name: 'lession8',
+      component: () => import('../views/CompositionAPI/LessionEight.vue')
+    },
+    {
+      path: '/CompositionAPI/lession9',
+      name: 'lession9',
+      component: () => import('../views/CompositionAPI/LessionNine.vue')
+    },
+    {
+      path: '/CompositionAPI/lession10',
+      name: 'lession10',
+      component: () => import('../views/CompositionAPI/LessionTen.vue')
+    },
+    {
+      path: '/CompositionAPI/lession11',
+      name: 'lession11',
+      component: () => import('../views/CompositionAPI/LessionEleven.vue')
+    },
+    {
+      path: '/CompositionAPI/lession12',
+      name: 'lession12',
+      component: () => import('../views/CompositionAPI/LessionTwelve.vue')
+    },
+    {
+      path: '/CompositionAPI/lession13',
+      name: 'lession13',
+      component: () => import('../views/CompositionAPI/LessionThirteen.vue')
+    },
+    {
+      path: '/CompositionAPI/lession14',
+      name: 'lession14',
+      component: () => import('../views/CompositionAPI/LessionForteen.vue')
     }
   ]
 })

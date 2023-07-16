@@ -29,6 +29,10 @@
   const saveItem = () =>{
       items.value.push({ id: items.value.lenght + 1, label: newItem.value })
   }
-  const items = ref([])
+  const items = ref([
+  { id: 1, label: '10 party hats' },
+  { id: 2, label: '2 board games' },
+  { id: 3, label: '20 cups' }
+])
   </script>
   
