@@ -6,8 +6,8 @@
       <!-- <form v-on:submit.prevent="items.push({ id: items.lenght + 1, label: newItem })"> -->
       <form @submit.prevent="saveItem">
         <div>
-          <input type="text"  v-model.trim="newItem" />
-          <input type="checkbox" v-model="newHighPriority" />
+          <input type="text"  v-model.trim="newItem" /> <br />
+          High Priority <input type="checkbox" v-model="newHighPriority" /><br />
           <button class="btn btn-primary" type="button" v-on:click="items.push({ id: items.lenght + 1, label: newItem })">
             Save
           </button>
