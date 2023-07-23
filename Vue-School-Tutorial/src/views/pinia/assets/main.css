@@ -1,26 +1,11 @@
-<script>
-// import NavigationView from './components/NavigationView.vue'
-import NavigationPinia from './components/NavPinia.vue'
-
-export default {
-components: { NavigationPinia}
-}
-</script>
-
-<template>
-  <div>
-    <NavigationPinia />
-    </div>
-</template>
-<style>
 @import './base.css';
 
 body {
   background: #eff8ff;
   height: 100vh;
   width: 100vw;
-  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +20,7 @@ body {
 }
 
 #app {
-  background: green;
+  background: #fff;
   padding: 2rem;
   margin: 1rem;
   border-radius: 3px;
@@ -170,23 +155,8 @@ li input {
 .priority {
   color: #de751f;
 }
-input[type='checkbox'] {
+input[type="checkbox"]{
   display: inline !important;
   box-shadow: none;
   width: auto;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline;
-}
-nav {
-  float: left;
-  width: 30%;
-  height: 900px; /* only for demonstration, should be removed */
-}
-</style>
