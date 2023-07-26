@@ -1,11 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useShopStore } from './stores/shop'
+const storeShop = useShopStore()
+const newItem = []
 const Header = ref('Welcome to shopping list app')
-const items = ref([
-  { id: 1, label: '10 party hats' },
-  { id: 2, label: '2 board games' },
-  { id: 3, label: '20 cups' }
-])
 </script>
 
 <template>
@@ -13,23 +11,40 @@ const items = ref([
     <h1>List Rendering in Vue</h1>
     <br />
     <h1>{{ Header || 'welcome' }}</h1>
+    <br />
+    <form @submit.prevent="saveItem">
+      <input type="text" v-model.trim="newItem" />
+      <!-- <button type="text" v-model="storeShop.saveItem">Add </button> -->
+      <button
+        class="btn btn-primary"
+        type="button"
+        v-on:click="storeShop.items.push({ id: storeShop.items.lenght + 1, label: storeShop.newItem })"
+      >
+        Save
+      </button>
+    </form>
+    <div>
+      <br />
+    <!-- <h1>{{ storeShop }}</h1> -->
+    1st list <br />
+    <ol>
+      <li v-for="(item, index) in storeShop.items" :key="index">{{ item.label }} <br /></li>
+    </ol>
+    2nd list <br />
     <ul>
-      <li v-for="(item, index) in items" :key="index">
-        {{ item }}
-      </li>
-    </ul>
-    <ul>
-      <li v-for="item in items" :key="item.id">
+      <li v-for="item in storeShop.items" :key="item.id">
         {{ item.label }}
+        <br />
       </li>
     </ul>
+    3rd list <br />
     <ul>
-      <li v-for="({id,label}, index) in items" :key="id">
-       {{ index }}
+      <li v-for="({ id, label }, index) in storeShop.items" :key="id">
+        {{ index }}
         {{ label }}
+        <br />
       </li>
     </ul>
+    </div>
   </div>
 </template>
-
-<style></style>

@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>pinia</h1>
-      <img src="./assets/imagePinia/icons8-cart-50.png" />{{ storeCounter.count }} <br /> {{ count }}
+      <img src="./assets/imagePinia/icons8-cart-50.png" />{{ storeCounter.count }} <br /> {{ storeCounter.count }}
     </div>
     <br />
     <img height="200" src="./assets/imagePinia/BP.jpg" />
@@ -28,10 +28,10 @@
 
 <script setup>
 // import { computed, ref } from 'vue'
-import {  ref } from 'vue'
+// import {  ref } from 'vue'
 import { useCounterStore } from './stores/counter'
 const storeCounter = useCounterStore()
-const count = ref(0)
+// const count = ref(0)
 // method
 // const increment = () => {
 //   count.value++
