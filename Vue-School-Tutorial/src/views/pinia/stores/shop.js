@@ -13,7 +13,7 @@ export const useShopStore = defineStore('shop', {
         { id: 2, label: '2 board games' },
         { id: 3, label: '20 cups' }
       ],
-      newItems: [],
+      newItem: '',
       // hasChanged: true
     }),
   getters: {
@@ -24,15 +24,16 @@ export const useShopStore = defineStore('shop', {
   },
   actions: {
     addItems1() {
-      return console.log()
+      
     },
     saveItem() {
-      // state.items.value.push({ id: items.value.lenght + 1, label: newItem.value })
-      // this.state.items.value.push({id: this.items.value.lenght +1, label: this.newItems.values})
-      this.state.items.value.push({
-        id: this.items.value.lenght + 1,
+      // items.value.push({ id: items.value.lenght + 1, label: newItem.value })
+      // newItem.value= ""
+      this.items.value.push({
+        id: this.items.value.length + 1,
         label: this.newItem.value
       })
+      // this.newItem.value= ""
     }
   }
 })

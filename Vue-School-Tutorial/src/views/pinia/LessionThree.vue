@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { useShopStore } from './stores/shop'
+const newItem = ref('')
 const storeShop = useShopStore()
-const newItem = []
 const Header = ref('Welcome to shopping list app')
 </script>
 
@@ -13,13 +13,13 @@ const Header = ref('Welcome to shopping list app')
     <h1>{{ Header || 'welcome' }}</h1>
     <br />
     <form @submit.prevent="saveItem">
-      <input type="text" v-model.trim="newItem" />
+      <input type="text" v-model="newItem" />
       <!-- <button type="text" v-model="storeShop.saveItem">Add </button> -->
+        <!-- v-on:click="storeShop.newItem.push({ id: storeShop.items.lenght + 1, label: storeShop.newItem })" -->
       <button
         class="btn btn-primary"
-        type="button"
-        v-on:click="storeShop.items.push({ id: storeShop.items.lenght + 1, label: storeShop.newItem })"
-      >
+        type="button"    
+        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem })">
         Save
       </button>
     </form>
