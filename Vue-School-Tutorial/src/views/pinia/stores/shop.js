@@ -13,7 +13,6 @@ export const useShopStore = defineStore('shop', {
         { id: 2, label: '2 board games' },
         { id: 3, label: '20 cups' }
       ],
-      newItem: '',
       // hasChanged: true
     }),
   getters: {
