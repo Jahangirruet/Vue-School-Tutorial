@@ -8,7 +8,7 @@
         <div>
           <input type="text"  v-model.trim="newItem" />
           <input type="checkbox" v-model="newHighPriority" />
-          <button class="btn btn-primary" type="button" v-on:click="items.push({ id: items.lenght + 1, label: newItem })">
+          <button class="btn btn-primary" type="button" v-on:click="items.push({ id: items.lenght + 1, label: newItem})">
             Save
           </button>
         </div>

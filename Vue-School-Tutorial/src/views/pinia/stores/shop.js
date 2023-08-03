@@ -5,15 +5,9 @@ export const useShopStore = defineStore('shop', {
   state: () =>
     // all these properties will have their type inferred automatically
     ({
-      count: 0,
-      name: 'Eduardo',
-      isAdmin: true,
-      items: [
-        { id: 1, label: '10 party hats' },
-        { id: 2, label: '2 board games' },
-        { id: 3, label: '20 cups' }
-      ],
-      // hasChanged: true
+      items: [],
+      newHighPriority: false,
+      editing: true
     }),
   getters: {
     oddEven: (state) => {
@@ -22,15 +16,21 @@ export const useShopStore = defineStore('shop', {
     }
   },
   actions: {
-    addItems1() {
-      
+    doEdit(){
+      try {
+        // this.editing.valueOf = e
+        this.newItem.value = ""
+      } catch  {
+        console.log(this.editing.valueOf)
+      }
     },
     saveItem() {
       // items.value.push({ id: items.value.lenght + 1, label: newItem.value })
       // newItem.value= ""
       this.items.value.push({
         id: this.items.value.length + 1,
-        label: this.newItem.value
+        label: this.newItem.value,
+        priority: this.newHighPriority.valueOf
       })
       // this.newItem.value= ""
     }

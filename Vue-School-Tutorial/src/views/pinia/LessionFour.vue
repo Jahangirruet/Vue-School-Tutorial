@@ -1,45 +1,39 @@
 <script setup>
 import { ref } from 'vue'
+import { useShopStore } from './stores/shop'
 const newItem = ref('')
-const newPriority = ref('low')
-const newHighPriority = ref('')
-const IcecreamFlavor = ref([])
+const storeShop = useShopStore()
+const Header = ref('Welcome to shopping list app')
 </script>
 <template>
   <div>
-    <div><input type="text" v-model="newItem" />{{ newItem }}</div>
+    <h1>List Rendering in Vue</h1>
     <br />
+    <h1>{{ Header || 'welcome' }}</h1>
+    <br />
+    <button v-if="storeShop.editing" @click="storeShop.doEdit(true)">Cancel</button>
+      <button v-else @click="storeShop.doEdit(false)">Add item</button>
+    <br />
+    <form v-if="storeShop.editing" @submit.prevent="saveItem">
+      <input type="text" v-model="newItem" />
+      <input type="checkbox" v-model="newHighPriority" />
+      <button
+        class="btn btn-primary"
+        type="button"    
+        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem, priority:newHighPriority  })">
+        Save
+      </button>
+    </form>
     <div>
-      Priority: <label> <input type="radio" v-model="newPriority" value="low" />Low</label>
-      <label><input type="radio" v-model="newPriority" value="high" />High</label> |
-      {{ newPriority }}
+      <br />
+    <!-- <h1>{{ storeShop }}</h1> -->
+    <ul>
+      <li v-for="item in storeShop.items" :key="item.id">
+        {{ item.label }}
+        <br />
+      </li>
+    </ul>
+    <p v-if="!storeShop.items.length">Nothing to see</p>
     </div>
-    <br />
-    <div>
-      <select v-model="newPriority">
-        Priority:
-        <option value="low">Low</option>
-        <option value="high">High</option>
-      </select>
-      {{ newPriority }}
-    </div>
-    <div>
-      High priority <input type="checkbox" v-model="newHighPriority" />{{ newHighPriority }}
-    </div>
-    <br />
-    <!-- clear -->
-    <br />
-    <label>
-      <input type="checkbox" value="Choklate" v-model="IcecreamFlavor" />
-    </label>
-    <label>
-      <input type="checkbox" value="Vanila" v-model="IcecreamFlavor" />
-    </label>
-    <label>
-      <input type="checkbox" value="Milk" v-model="IcecreamFlavor" />
-    </label>
-    Ice creame flavor : {{ IcecreamFlavor }}
   </div>
 </template>
-
-<style></style>

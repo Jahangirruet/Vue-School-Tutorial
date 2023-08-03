@@ -5,7 +5,6 @@ const newItem = ref('')
 const storeShop = useShopStore()
 const Header = ref('Welcome to shopping list app')
 </script>
-
 <template>
   <div>
     <h1>List Rendering in Vue</h1>
@@ -14,12 +13,11 @@ const Header = ref('Welcome to shopping list app')
     <br />
     <form @submit.prevent="saveItem">
       <input type="text" v-model="newItem" />
-      <!-- <button type="text" v-model="storeShop.saveItem">Add </button> -->
-        <!-- v-on:click="storeShop.newItem.push({ id: storeShop.items.lenght + 1, label: storeShop.newItem })" -->
+      <input type="checkbox" v-model="newHighPriority" />
       <button
         class="btn btn-primary"
         type="button"    
-        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem })">
+        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem, priority:newHighPriority  })">
         Save
       </button>
     </form>
