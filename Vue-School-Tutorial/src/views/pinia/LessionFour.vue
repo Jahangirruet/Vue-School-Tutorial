@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useShopStore } from './stores/shop'
 const newItem = ref('')
+const newHighPriority = ref()
 const storeShop = useShopStore()
 const Header = ref('Welcome to shopping list app')
 </script>
@@ -20,7 +21,7 @@ const Header = ref('Welcome to shopping list app')
       <button
         class="btn btn-primary"
         type="button"    
-        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem, priority:newHighPriority  })">
+        v-on:click="storeShop.items.push({ id: storeShop.items.length + 1, label: newItem, priority : newHighPriority  })">
         Save
       </button>
     </form>
