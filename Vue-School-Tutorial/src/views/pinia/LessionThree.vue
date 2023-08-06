@@ -25,9 +25,7 @@ const Header = ref('Welcome to shopping list app')
       <br />
     <!-- <h1>{{ storeShop }}</h1> -->
     1st list <br />
-    <ol>
-      <li v-for="(item, index) in storeShop.items" :key="index">{{ item.label }} <br /></li>
-    </ol>
+
     2nd list <br />
     <ul>
       <li v-for="item in storeShop.items" :key="item.id">

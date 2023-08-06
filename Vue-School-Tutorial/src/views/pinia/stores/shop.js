@@ -5,9 +5,14 @@ export const useShopStore = defineStore('shop', {
   state: () =>
     // all these properties will have their type inferred automatically
     ({
-      items: [],
+      items: [
+        { id: 1, label: '10 party hats' },
+        { id: 2, label: '2 board games' },
+        { id: 3, label: '20 cups' }
+      ],
+      // newItem: [],
       newHighPriority: false,
-      editing: true
+      editing: false
     }),
   getters: {
     oddEven: (state) => {
@@ -16,23 +21,23 @@ export const useShopStore = defineStore('shop', {
     }
   },
   actions: {
-    doEdit(){
+    doEdit(e) {
       try {
-        // this.editing.valueOf = e
-        this.newItem.value = ""
-      } catch  {
-        console.log(this.editing.valueOf)
+        this.editing.value = e
+        // this.newItem.value = ""
+        // this.editing.value = e
+      // this.newItem.value = ""
+      console.log(this.editing.valueOf({e}))
+      } catch {
+        console.log('Error')
       }
     },
     saveItem() {
-      // items.value.push({ id: items.value.lenght + 1, label: newItem.value })
-      // newItem.value= ""
       this.items.value.push({
         id: this.items.value.length + 1,
         label: this.newItem.value,
         priority: this.newHighPriority.valueOf
       })
-      // this.newItem.value= ""
     }
   }
 })

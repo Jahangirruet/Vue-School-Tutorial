@@ -47,5 +47,6 @@ const items = ref([
 const doEdit = (e) =>{
   editing.value = e
   newItem.value = ""
+  console.log(editing.value)
 }
 </script>
