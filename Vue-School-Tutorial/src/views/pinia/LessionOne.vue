@@ -1,36 +1,14 @@
 <template>
   <div>
-    <div>
-      <h1>pinia</h1>
-      <img src="./assets/imagePinia/icons8-cart-50.png" />{{ storeCounter.count }} <br /> {{ storeCounter.count }}
-    </div>
-    <br />
-    <img height="200" src="./assets/imagePinia/BP.jpg" />
-    <br />
-    <button class="btn btn-primary" @click="storeCounter.increaseCount">+</button
-    ><button class="btn btn-primary">{{ storeCounter.count }}</button
-    ><button class="btn btn-primary" @click="storeCounter.decreaseCount">-</button><br />
-    <button class="btn btn-primary">Add to cart</button>
-    <div>
-      <img height="200" src="./assets/imagePinia/BP.jpg" />
-      <br />
-      <button class="btn btn-primary" @click="storeCounter.increaseCount">+</button
-      ><button class="btn btn-primary">{{ storeCounter.count }}</button
-      ><button class="btn btn-primary" @click="storeCounter.decreaseCount">-</button><br />
-      <button class="btn btn-primary">Add to cart</button>
-      <br />
-      <h1>{{ storeCounter.oddEven }}</h1>
-      <br />
-      <input type="number" v-model="storeCounter.count">
-    </div>
+<h1>hello 1</h1>
   </div>
 </template>
 
 <script setup>
 // import { computed, ref } from 'vue'
 // import {  ref } from 'vue'
-import { useCounterStore } from './stores/counter'
-const storeCounter = useCounterStore()
+// import { useCounterStore } from './stores/counter'
+// const storeCounter = useCounterStore()
 // const count = ref(0)
 // method
 // const increment = () => {
